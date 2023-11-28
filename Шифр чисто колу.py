@@ -8,9 +8,8 @@ g.resizable(width=False, height=False)
 frame = Frame(g, bg="yellow")
 frame.place(relx=0.15, rely=0.15, relwidth=0.7, relheight=0.7)
 
-title = Label(frame, text="Ведіть текст для шифрування", bg="gray", font=42)
+title = Label(frame, text="Введіть текст для шифрування", bg="gray", font=42)
 title.pack()
-
 
 key123 = Entry(frame, bg="white")
 key123.pack()
@@ -20,8 +19,9 @@ keyy.pack()
 
 def baton1():
     teext = key123.get()
-    teext.lower()
-    teext.split()
+    teext = teext.lower()
+    teext = teext.split()
+    hft = ""
     
     for x in range(0, len(teext)):
         teext[x] = list(teext[x])
@@ -34,7 +34,7 @@ def baton1():
             text2.append(teext[x][i])
         
         for i in teext:
-            hft = text1+text2 
+            hft += hft.join(text1+text2)
     
     sam_text = Tk()
     sam_text.geometry("600x500")
@@ -47,8 +47,27 @@ btn = Button(frame, text="ключ 2:", bg="gray", command=baton1)
 btn.pack()
 
 def baton2():
+    teext = key123.get()
+    teext = teext.lower()
+    teext = teext.split()
     hft = ""
-    pass 
+    
+    for x in range(0, len(teext)):
+        teext[x] = list(teext[x])
+        text1 = []
+        text2 = []
+        text3 = []
+        for i in range(1, len(teext[x]), 3): 
+            text1.append(teext[x][i])  
+              
+        for i in range(0, len(teext[x]), 3): 
+            text2.append(teext[x][i])
+            
+        for i in range(2, len(teext[x]), 3): 
+            text3.append(teext[x][i])
+        
+        for i in teext:
+            hft += hft.join(text2+text1+text3)
     
     sam_text = Tk()
     sam_text.geometry("600x500")
@@ -60,8 +79,31 @@ btn1 = Button(frame, text="ключ 3:", bg="gray", command=baton2)
 btn1.pack()
 
 def baton3():
+    teext = key123.get()
+    teext = teext.lower()
+    teext = teext.split()
     hft = ""
-    pass
+    
+    for x in range(0, len(teext)):
+        teext[x] = list(teext[x])
+        text1 = []
+        text2 = []
+        text3 = []
+        text4 = []
+        for i in range(1, len(teext[x]), 4): 
+            text1.append(teext[x][i])  
+              
+        for i in range(0, len(teext[x]), 4): 
+            text2.append(teext[x][i])
+            
+        for i in range(2, len(teext[x]), 4): 
+            text3.append(teext[x][i])
+            
+        for i in range(3, len(teext[x]), 4): 
+            text4.append(teext[x][i])
+        
+        for i in teext:
+            hft += hft.join(text2+text1+text3+text4)
     
     sam_text = Tk()
     sam_text.geometry("600x500")
